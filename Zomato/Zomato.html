@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zomato</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="Zomato.css">
+</head>
+<body>
+    <header >
+        <div class="head">
+            <div class="logo">
+            <img src="https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png" alt="zomato">
+            </div>
+            <div class="losa">
+                <div class="location">
+                    <i class="fa-solid fa-location-dot" onclick="closeDetect()"></i>
+                    <input placeholder="Prayagraj" class="locs" onclick="openDetect()">
+                    <i class="fa-solid fa-sort-down" id="down" onclick="closeDetect()"></i>
+                </div>
+                <div class="linex"> </div>
+                <div class="ssee">
+                    <i class="fa-solid fa-magnifying-glass" onclick="closeDetect()"></i>
+                </div>
+                <div class="searchbar">
+                    <input placeholder="Search for restaurant, cuisine or a dish" class="search" onclick="closeDetect()">
+                </div>
+            </div>
+            <div class="detect" id="detect">
+                <i class="fa-solid fa-xmark" id="cross" onclick="closeDetect()"></i>
+                <div class="current">
+                    <div class="l-det">
+                        <i class="fa-solid fa-crosshairs"></i>
+                        <p>Detect Current Location</p>
+                    </div>
+                    <p class="para">Using GPS</p>
+                </div>
+                <hr>
+                <div class="downn">
+                    <div class="recent">
+                        Recent Locations
+                    </div>
+                    <div class="rec-locc">
+                        <i class="fa-regular fa-clock"></i>
+                        <p>Prayagraj</p>
+                    </div>
+                </div>
+            </div>
+            <ul onclick="closeDetect()">
+                <li class="logup">
+                    <a href="#" id="show-login">Log  in</a>
+                </li>
+                <div class="popup">
+                    <div class="close-btn">&times;</div>
+                    <div class="form">
+                        <h2>Log in</h2>
+                        <div class="form-element">
+                            <label for="email">Email</label>
+                            <input type="text" id="email" placeholder="Enter Email">
+                        </div>
+                        <div class="form-element">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" placeholder="Enter Password">
+                        </div>
+                        <div class="form-element">
+                            <input type="checkbox" id="remember-me">
+                            <label for="remember-me">Remember me</label>
+                        </div>
+                        <div class="form-element">
+                            <button>Sign in</button>
+                        </div>
+                        <div class="form-element">
+                            <a href="#">Forgot password?</a>
+                            <br><br>
+                            <a href="#">Create Account!</a>
+                        </div>
+                    </div>
+                </div>
+                <li class="logup">
+                    <a href="#" id="show-signup">Sign up</a>
+                </li>
+                <div class="popup1">
+                    <div class="close-btn1">&times;</div>
+                    <div class="form1">
+                        <h2>Sign Up</h2>
+                        <div class="form-element1">
+                            <input type="text" id="full name" placeholder="Full Name">
+                        </div>
+                        <div class="form-element1">
+                            <input type="email" id="email" placeholder="Email">
+                        </div>
+                        <div class="form-elemen1t">
+                            <input type="checkbox" id="remember-me1">
+                            <label for="remember-me1">
+                                I agree to Zomato's <a href="#">Terms of Service</a>, <a href="#">Privacy Policy</a> and <a href="#">Content Policies</a></label>
+                        </div>
+                        <div class="form-element1">
+                            <button>Create Account</button>
+                        </div>
+                        <div class="form-element1">
+                            <p>Already have an Account?</p>
+                            <a href="#">Log in</a>
+                        </div>
+                    </div>
+                </div>
+            </ul>
+        </div>
+        <div class="line" onclick="closeDetect()">
+            <div class="bottom-head">
+                <div class="first">
+                    <div class="img"><img src="	https://b.zmtcdn.com/data/o2_assets/c0bb85d3a6347b2ec070a8db694588261616149578.png"></div>
+                    <div class="delivery">Delivery</div>
+                </div>
+                <div class="second">
+                    <div class="img1"><img src="	https://b.zmtcdn.com/data/o2_assets/78d25215ff4c1299578ed36eefd5f39d1616149985.png"></div>
+                    <div class="dining">Dining Out</div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="frpvc" onclick="closeDetect()">
+        <div class="filveg">
+            <div class="filter" onclick="openContainer()"><i class="fa-solid fa-sliders"></i>Filters</div>
+            <div class="container" id="container">
+                <div class="filhead">
+                    <h2>Filters</h2>
+                    <i class="fa-solid fa-xmark" onclick="closeContainer()"></i>
+                </div>
+                <div class="cont">
+                    <div class="fcrcm">
+                        <div class="row1">Sort By <br>Popularity
+                        </div>
+                        <div class="row">Cuisines</div>
+                        <div class="row">Rating</div>
+                        <div class="row">Cost Per Person</div>
+                        <div class="row">More Filters</div>
+                    </div>
+                    <div class="popu">
+                        <div class="elem">
+                            <input type="radio" id="popularity">
+                            <label for="popularity">Popularity</label>
+                        </div>
+                        <div class="elem">
+                            <input type="radio" id="rating">
+                            <label for="rating">Rating: High to Low</label>
+                        </div>
+                        <div class="elem">
+                            <input type="radio" id="del">
+                            <label for="del">Delivery Time</label>
+                        </div>
+                        <div class="elem">
+                            <input type="radio" id="cost">
+                            <label for="cost">Cost: High to Low</label>
+                        </div>
+                        <div class="elem">
+                            <input type="radio" id="low">
+                            <label for="low">Cost: Low to High</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="btns">
+                    <button class="btn1" onclick="closeContainer()">Clear all</button>
+                    <button class="btn" onclick="closeContainer()"> Apply</button>
+                </div>
+            </div>
+            <div class="filter1">Rating: 4.0+</div>
+            <div class="filter2">Pure Veg</div>
+            <div class="filter3" onclick="opencuiscontainer()">Cuisines <i class="fa-solid fa-chevron-down"></i></div>
+            <div class="cuiscontainer" id="cuiscontainer">
+                <div class="cuisi-head">
+                    <h3>Cuisines</h3>
+                    <i class="fa-solid fa-xmark" onclick="closecuiscontainer()"></i>
+                </div>
+                <div class="cui-form">
+                    <input type="text" placeholder="Search Here">
+                </div>
+                <div class="cui-items">
+                    <div class="cui-row">
+                        <div class="che">
+                            <input type="checkbox" id="abru">
+                            <label for="abru">Abruzzese</label>
+                        </div>
+                        <div class="che">
+                            <input type="checkbox" id="aeg">
+                            <label for="aeg">Aegean</label>
+                        </div>
+                        <div class="che">
+                            <input type="checkbox" id="afg">
+                            <label for="afg">afghani</label>
+                        </div>
+                        <div class="che">
+                            <input type="checkbox" id="agri">
+                            <label for="agri">Agritourism</label>
+                        </div>
+                        <div class="che">
+                            <input type="checkbox" id="alg">
+                            <label for="alg">Algerian</label>
+                        </div>
+                    </div>
+                    <div class="cui-row1">
+                        <div class="che">
+                            <input type="checkbox" id="ace">
+                            <label for="ace">Aceh</label>
+                        </div>
+                        <div class="che">
+                            <input type="checkbox" id="afg">
+                            <label for="afg">Afghan</label>
+                        </div>
+                        <div class="che">
+                            <input type="checkbox" id="afr">
+                            <label for="afr">African</label>
+                        </div>
+                        <div class="che">
+                            <input type="checkbox" id="ale">
+                            <label for="ale">Alentejana</label>
+                        </div>
+                        <div class="che">
+                            <input type="checkbox" id="alt">
+                            <label for="alt">Altoatesine</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="btnss">
+                    <button class="btn2" onclick="closecuiscontainer()">Clear all</button>
+                    <button class="btna" onclick="closecuiscontainer()"> Apply</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pbctbf" onclick="closeDetect()">
+        <div class="dishes" onclick="closecuiscontainer()">
+            <h3>Inspiration for your first order</h3>
+        </div>
+        <div class="wrapper" onclick="closecuiscontainer()">
+            <i id="left" class="fa-solid fa-chevron-left"></i>
+            <div class="carouse1">
+                <img src="https://b.zmtcdn.com/data/o2_assets/348a8b7fdafc56ba233c77113e7e3a491632716601.png" class="slide" alt="img">
+                <img src="https://b.zmtcdn.com/data/o2_assets/d0bd7c9405ac87f6aa65e31fe55800941632716575.png" class="slide" alt="">
+                <img src="https://b.zmtcdn.com/data/dish_images/c953e5ca07150e9a51f8b21102e20f7e1634805157.png" class="slide" alt="">
+                <img src="https://b.zmtcdn.com/data/o2_assets/fc641efbb73b10484257f295ef0b9b981634401116.png" class="slide" alt="">
+                <img src="https://b.zmtcdn.com/data/dish_images/d5ab931c8c239271de45e1c159af94311634805744.png" class="slide" alt="">
+                <img src="https://b.zmtcdn.com/data/o2_assets/8dc39742916ddc369ebeb91928391b931632716660.png" class="slide" alt="">
+                <img src="https://b.zmtcdn.com/data/o2_assets/52eb9796bb9bcf0eba64c643349e97211634401116.png" class="slide" alt="">
+                <img src="https://b.zmtcdn.com/data/o2_assets/019409fe8f838312214d9211be010ef31678798444.jpeg" class="slide" alt="">
+                <img src="https://b.zmtcdn.com/data/dish_images/ccb7dc2ba2b054419f805da7f05704471634886169.png" class="slide" alt="">
+                <img src="https://b.zmtcdn.com/data/dish_photos/e8a/7694d370f8ef93357abbf610afc6be8a.jpg" class="slide" alt="">
+                <img src="https://b.zmtcdn.com/data/dish_images/d9766dd91cd75416f4f65cf286ca84331634805483.png" class="slide" alt="">
+                <img src="https://b.zmtcdn.com/data/o2_assets/2b5a5b533473aada22015966f668e30e1633434990.png" class="slide" alt="">
+            </div>
+            <i id="right" class="fa-solid fa-chevron-right"></i>
+        </div>
+    </div>
+    <div class="apkkc">
+        <div class="z-brands">
+            <h3>Top Brands for you</h3>
+        </div>
+        <div class="brands">
+            <div class="albaik">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrwtw3kOPlocT1USte1oHWHDnnxnKXcVBOcj9fHqCzrV-jVk_tljBBZICvcUdXbVlBDL4&usqp=CAU" alt="">
+                <div class="brname">
+                    <h3>AL-Baik Zone</h3>
+                    <div class="brtime">25 min</div>
+                </div>
+            </div>
+            <div class="pizzahut">
+                <img src=https://www.freepnglogos.com/uploads/pizza-hut-png-logo/pizza-hut-brands-png-logo-8.png alt="">
+                <div class="brname">
+                    <h3>Pizza Hut</h3>
+                    <div class="brtime">32 min</div>
+                </div>
+            </div>
+            <div class="kfc">
+                <img src="https://static.vecteezy.com/system/resources/previews/024/693/425/original/kfc-logo-transparent-free-png.png" alt="">
+                <div class="brname">
+                    <h3>KFC</h3>
+                    <div class="brtime">29 min</div>
+                </div>
+            </div>
+            <div class="kwality">
+                <img src="https://www.kwalitywalls.in/content/dam/unilever/heart/global/kw_in/510x510_vanilla-1868094-png.png" alt="">
+                <div class="brname">
+                    <h3>Kwality Wall's Frozen Desert and  Ice cream Shop</h3>
+                    <div class="brtime">31 min</div>
+                </div>
+            </div>
+            <div class="chicago">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVcxawImGZyr4qgmk6gRpbzGwW5zipXPC6E7bwk9A&s" alt="">
+                <div class="brname">
+                    <h3>Chicago Pizza</h3>
+                    <div class="brtime">33 min</div>
+                </div>
+            </div>
+            <div class="downtown">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp3alyTVL57_B7dA2om4MFwD3f7_pGxUbzxtQuDmg&s" alt="">
+                <div class="brname">
+                    <h3>Downtown Pizza</h3>
+                    <div class="brtime">52 min</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="allitems">
+        <div class="bestfood">
+            <h3>Best Foods in Allahabad</h3>
+        </div>
+        <div class="itemsr1">
+            <div class="itemm1">
+                <div class="imgg1">
+                    <img src="https://albaik.info/wp-content/uploads/2023/03/Albaik-Big-Baik-Spicy-Sandwich.jpg" alt="">
+                </div>
+                <div class="iname">
+                    <div>
+                        <h4>AL-Baik Zone</h4>
+                    </div>
+                    <div class="irating">
+                        <p>4.1<i class="fa-solid fa-star"></i></p>
+                    </div>
+                </div>
+                <div class="iregion">
+                    <div>
+                        <p>North Indian, Fast Fo...</p>
+                    </div>
+                    <div>
+                        <p>₹100 for one</p>
+                    </div>
+                </div>
+                <div class="itime"><p>25 min</p></div>
+                <hr>
+                <div class="isafety">
+                    <div class="isafeimg">
+                        <img src="https://b.zmtcdn.com/data/o2_assets/e50eb01feab6bd50e50430f34b4645ac1613542991.png" alt="">
+                    </div>
+                    <div class="isafep">
+                        <p>Follows all Max Safety measures to ensure your food is safe</p>
+                    </div>
+                </div>
+            </div>
+            <div class="itemm2">
+                <div class="imgg1">
+                    <img src="https://b.zmtcdn.com/data/pictures/chains/1/3800111/a0c3bcc09b1448a7138beda386f8db21.jpg?fit=around|750:500&crop=750:500;*,*" alt="">
+                </div>
+                <div class="iname">
+                    <div>
+                        <h4>Dominus Pizza</h4>
+                    </div>
+                    <div class="irating">
+                        <p>3.9<i class="fa-solid fa-star"></i></p>
+                    </div>
+                </div>
+                <div class="iregion">
+                    <div>
+                        <p>Pizza, Italian, Burger, fast...</p>
+                    </div>
+                    <div>
+                        <p>₹100 for one</p>
+                    </div>
+                </div>
+                <div class="itime"><p>35 min</p></div>
+            </div>
+            <div class="itemm3">
+                <div class="imgg1">
+                    <img src="https://lh3.googleusercontent.com/vcF8wXJ4ybZnzalkobqgWLNRWPsPOAWSBcJjrhUAL5GwV9ZVJlAN3jjWjALkdl3DS522xPaFjPafHMbJEBizzgm_gLyF=w512-rw" alt="">
+                </div>
+                <div class="iname">
+                    <div>
+                        <h4>Satkaar Sakahari Bhojanalaya</h4>
+                    </div>
+                    <div class="irating">
+                        <p>4.0<i class="fa-solid fa-star"></i></p>
+                    </div>
+                </div>
+                <div class="iregion">
+                    <div>
+                        <p>North Indian</p>
+                    </div>
+                    <div>
+                        <p>₹100 for one</p>
+                    </div>
+                </div>
+                <div class="itime"><p>28 min</p></div>
+                <hr>
+                <div class="isafety">
+                    <div class="isafeimg">
+                        <img src="https://b.zmtcdn.com/data/o2_assets/e50eb01feab6bd50e50430f34b4645ac1613542991.png" alt="">
+                    </div>
+                    <div class="isafep">
+                        <p>Follows all Max Safety measures to ensure your food is safe</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="itemsr1">
+            <div class="itemm1">
+                <div class="imgg1">
+                    <img src="https://www.awesomecuisine.com/wp-content/uploads/2007/10/gulab-jamun.jpg" alt="">
+                </div>
+                <div class="iname">
+                    <div>
+                        <h4>Shiv Misthan Bandhar</h4>
+                    </div>
+                    <div class="irating">
+                        <p>4.4<i class="fa-solid fa-star"></i></p>
+                    </div>
+                </div>
+                <div class="iregion">
+                    <div>
+                        <p>Mithai, Fast Food, Street F...</p>
+                    </div>
+                    <div>
+                        <p>₹100 for one</p>
+                    </div>
+                </div>
+                <div class="itime"><p>18 min</p></div>
+            </div>
+            <div class="itemm2">
+                <div class="imgg1">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmFN4F9Imu13y0vuHNR1I1z3A08siaV__rWw&usqp=CAU" alt="">
+                </div>
+                <div class="iname">
+                    <div>
+                        <h4>Chicago Pizza</h4>
+                    </div>
+                    <div class="irating">
+                        <p>3.6<i class="fa-solid fa-star"></i></p>
+                    </div>
+                </div>
+                <div class="iregion">
+                    <div>
+                        <p>Pizza, Pasta, Beverages, It...</p>
+                    </div>
+                    <div>
+                        <p>₹100 for one</p>
+                    </div>
+                </div>
+                <div class="itime"><p>33 min</p></div>
+                <hr>
+                <div class="isafety">
+                    <div class="isafeimg">
+                        <img src="https://b.zmtcdn.com/data/o2_assets/e50eb01feab6bd50e50430f34b4645ac1613542991.png" alt="">
+                    </div>
+                    <div class="isafep">
+                        <p>Follows all Max Safety measures to ensure your food is safe</p>
+                    </div>
+                </div>
+            </div>
+            <div class="itemm3">
+                <div class="imgg1">
+                    <img src="https://b.zmtcdn.com/data/pictures/chains/3/10503/c5f88498b5273c6084128ba34f86a4ab.jpg" alt="">
+                </div>
+                <div class="iname">
+                    <div>
+                        <h4>Pizza Hut</h4>
+                    </div>
+                    <div class="irating">
+                        <p>3.9<i class="fa-solid fa-star"></i></p>
+                    </div>
+                </div>
+                <div class="iregion">
+                    <div>
+                        <p>Pizza, Fast Food, Dessert...</p>
+                    </div>
+                    <div>
+                        <p>₹100 for one</p>
+                    </div>
+                </div>
+                <div class="itime"><p>32 min</p></div>
+            </div>
+        </div>
+         <div class="itemsr1">
+            <div class="itemm1">
+                <div class="imgg1">
+                    <img src="https://b.zmtcdn.com/data/pictures/chains/7/19433477/9c2d96a09a77d68737ad67f23e6a5ab4.jpg" alt="">
+                </div>
+                <div class="iname">
+                    <div>
+                        <h4>Kwality Wall's Frozen Dessert</h4>
+                    </div>
+                    <div class="irating">
+                        <p>4.5<i class="fa-solid fa-star"></i></p>
+                    </div>
+                </div>
+                <div class="iregion">
+                    <div>
+                        <p>Ice Crean, Desserts</p>
+                    </div>
+                    <div>
+                        <p>₹250 for one</p>
+                    </div>
+                </div>
+                <div class="itime"><p>20 min</p></div>
+                <hr>
+                <div class="isafety">
+                    <div class="isafeimg">
+                        <img src="https://b.zmtcdn.com/data/o2_assets/e50eb01feab6bd50e50430f34b4645ac1613542991.png" alt="">
+                    </div>
+                    <div class="isafep">
+                        <p>Follows all Max Safety measures to ensure your food is safe</p>
+                    </div>
+                </div>
+            </div>
+            <div class="itemm2">
+                <div class="imgg1">
+                    <img src="https://b.zmtcdn.com/data/pictures/chains/1/931/3d7a8a7b601bee632f81581dca960a0e.jpg?fit=around|960:500&crop=960:500;*,*" alt="">
+                </div>
+                <div class="iname">
+                    <div>
+                        <h4>KFC</h4>
+                    </div>
+                    <div class="irating">
+                        <p>4.1<i class="fa-solid fa-star"></i></p>
+                    </div>
+                </div>
+                <div class="iregion">
+                    <div>
+                        <p>Burger, Fast Food, Biriyani...</p>
+                    </div>
+                    <div>
+                        <p>₹250 for one</p>
+                    </div>
+                </div>
+                <div class="itime"><p>17 min</p></div>
+            </div>
+            <div class="itemm3">
+                <div class="imgg1">
+                    <img src="https://www.daringgourmet.com/wp-content/uploads/2023/06/Dosa-Recipe-3.jpg" alt="">
+                </div>
+                <div class="iname">
+                    <div>
+                        <h4>Nidhi Restaurant</h4>
+                    </div>
+                    <div class="irating">
+                        <p>4.2<i class="fa-solid fa-star"></i></p>
+                    </div>
+                </div>
+                <div class="iregion">
+                    <div>
+                        <p>North Indian, South Indian</p>
+                    </div>
+                    <div>
+                        <p>₹250 for one</p>
+                    </div>
+                </div>
+                <div class="itime"><p>22 min</p></div>
+            </div>
+        </div>
+        <div class="itemsr1">
+            <div class="itemm1">
+                <div class="imgg1">
+                    <img src="https://b.zmtcdn.com/data/pictures/chains/1/49781/7c8d1e6d9612e5bee0d54a39188e95a4.jpg" alt="">
+                </div>
+                <div class="iname">
+                    <div>
+                        <h4>Burger King</h4>
+                    </div>
+                    <div class="irating">
+                        <p>4.0<i class="fa-solid fa-star"></i></p>
+                    </div>
+                </div>
+                <div class="iregion">
+                    <div>
+                        <p>Burger, Fast Food, Bevera...</p>
+                    </div>
+                    <div>
+                        <p>₹200 for one</p>
+                    </div>
+                </div>
+                <div class="itime"><p>29 min</p></div>
+                <hr>
+                <div class="isafety">
+                    <div class="isafeimg">
+                        <img src="https://b.zmtcdn.com/data/o2_assets/e50eb01feab6bd50e50430f34b4645ac1613542991.png" alt="">
+                    </div>
+                    <div class="isafep">
+                        <p>Follows all Max Safety measures to ensure your food is safe</p>
+                    </div>
+                </div>
+            </div>
+            <div class="itemm2">
+                <div class="imgg1">
+                    <img src="https://kamdhenusweet.in/wp-content/uploads/2017/03/IMG_0665-500x500.jpg" alt="">
+                </div>
+                <div class="iname">
+                    <div>
+                        <h4>Kamdhenu Sweets</h4>
+                    </div>
+                    <div class="irating">
+                        <p>4.3<i class="fa-solid fa-star"></i></p>
+                    </div>
+                </div>
+                <div class="iregion">
+                    <div>
+                        <p>Mithai, Street Food</p>
+                    </div>
+                    <div>
+                        <p>₹200 for one</p>
+                    </div>
+                </div>
+                <div class="itime"><p>12 min</p></div>
+            </div>
+            <div class="itemm3">
+                <div class="imgg1">
+                    <img src="https://www.whiskaffair.com/wp-content/uploads/2020/10/Veg-Hakka-Noodles-2-3.jpg" alt="">
+                </div>
+                <div class="iname">
+                    <div>
+                        <h4>AL-Baik and Pizza Town</h4>
+                    </div>
+                    <div class="irating">
+                        <p>4.0<i class="fa-solid fa-star"></i></p>
+                    </div>
+                </div>
+                <div class="iregion">
+                    <div>
+                        <p>Pizza, Chinese, Fast Food,...</p>
+                    </div>
+                    <div>
+                        <p>₹200 for one</p>
+                    </div>
+                </div>
+                <div class="itime"><p>31 min</p></div>
+                <hr>
+                <div class="isafety">
+                    <div class="isafeimg">
+                        <img src="https://b.zmtcdn.com/data/o2_assets/e50eb01feab6bd50e50430f34b4645ac1613542991.png" alt="">
+                    </div>
+                    <div class="isafep">
+                        <p>Follows all Max Safety measures to ensure your food is safe</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="itemsr1">
+            <div class="itemm1">
+                <div class="imgg1">
+                    <img src="https://www.licious.in/blog/wp-content/uploads/2020/12/Hyderabadi-chicken-Biryani-750x750.jpg" alt="">
+                </div>
+                <div class="iname">
+                    <div>
+                        <h4>Delight Pastry Shop</h4>
+                    </div>
+                    <div class="irating">
+                        <p>4.3<i class="fa-solid fa-star"></i></p>
+                    </div>
+                </div>
+                <div class="iregion">
+                    <div>
+                        <p>Bakery, Fast Food, Rolls,...</p>
+                    </div>
+                    <div>
+                        <p>₹200 for one</p>
+                    </div>
+                </div>
+                <div class="itime"><p>25 min</p></div>
+                <hr>
+                <div class="isafety">
+                    <div class="isafeimg">
+                        <img src="https://b.zmtcdn.com/data/o2_assets/e50eb01feab6bd50e50430f34b4645ac1613542991.png" alt="">
+                    </div>
+                    <div class="isafep">
+                        <p>Follows all Max Safety measures to ensure your food is safe</p>
+                    </div>
+                </div>
+            </div>
+            <div class="itemm2">
+                <div class="imgg1">
+                    <img src="https://media-cdn.tripadvisor.com/media/photo-s/0e/9f/c4/d2/take-out-large-pizza.jpg" alt="">
+                </div>
+                <div class="iname">
+                    <div>
+                        <h4>The Pizza World</h4>
+                    </div>
+                    <div class="irating">
+                        <p>4.0<i class="fa-solid fa-star"></i></p>
+                    </div>
+                </div>
+                <div class="iregion">
+                    <div>
+                        <p>Pizza, Fast Food, Beverag...</p>
+                    </div>
+                    <div>
+                        <p>₹200 for one</p>
+                    </div>
+                </div>
+                <div class="itime"><p>34 min</p></div>
+            </div>
+            <div class="itemm3">
+                <div class="imgg1">
+                    <img src="https://mytastycurry.com/wp-content/uploads/2016/05/quick-and-delicious-hyderabadi-dum-style-chicken-biryani-recipe-with-step-by-step-instructional-video.1024x1024.jpg" alt="">
+                </div>
+                <div class="iname">
+                    <div>
+                        <h4>Khansama</h4>
+                    </div>
+                    <div class="irating">
+                        <p>4.2<i class="fa-solid fa-star"></i></p>
+                    </div>
+                </div>
+                <div class="iregion">
+                    <div>
+                        <p>North Indian, Biriyani</p>
+                    </div>
+                    <div>
+                        <p>₹200 for one</p>
+                    </div>
+                </div>
+                <div class="itime"><p>30 min</p></div>
+            </div>
+        </div>    
+    </div>
+    <div class="collections">
+        <div class="collections-head">
+            <h2>Collections</h2>
+        </div>
+        <div class="coll-div">
+            <div class="collection-h6">
+                <h6>Explore curated lists of top restaurants, cafes, pubs, and bars in Allahabad, based on trends</h6>
+            </div>
+            <div class="col-link">
+                All Collections in Allahabad <i class="fa-solid fa-caret-right"></i>
+            </div>
+        </div>
+    </div>
+    <div class="coll-img">
+        <div class="veg-del">
+            <p>Vegeterian Delights</p>
+            <h6>8 Places <i class="fa-solid fa-caret-right"></i></h6>
+        </div>
+        <div class="bri-bir">
+            <p>Brilliant Biriyanis</p>
+            <h6>6 Places <i class="fa-solid fa-caret-right"></i></h6>
+        </div>
+        <div class="best-pizza">
+            <p>Best Pizza Places In Town</p>
+            <h6>6 Places <i class="fa-solid fa-caret-right"></i></h6>
+        </div>
+    </div>
+    <div class="popular">
+        <div class="cit-head">
+            <p>Popular localities in and around Allahabad</p>
+        </div>
+        <div class="cities">
+            <div class="civil">
+                <div class="lines">
+                    <h5>Civil Lines</h5>
+                    <p>288 Places</p>
+                </div>
+                <div class="ic-lines">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+            </div>
+            <div class="civil">
+                <div class="lines">
+                    <h5>Tagore Town</h5>
+                    <p>30 Places</p>
+                </div>
+                <div class="ic-lines">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+            </div>
+            <div class="civil">
+                <div class="lines">
+                    <h5>Ashok Nagar</h5>
+                    <p>19 places</p>
+                </div>
+                <div class="ic-lines">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+            </div>
+        </div>
+        <div class="cities">
+            <div class="civil">
+                <div class="lines">
+                    <h5>Katra</h5>
+                    <p>78 Places</p>
+                </div>
+                <div class="ic-lines">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+            </div>
+            <div class="civil">
+                <div class="lines">
+                    <h5>Colonel Ganj</h5>
+                    <p>26 Places</p>
+                </div>
+                <div class="ic-lines">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+            </div>
+            <div class="civil">
+                <div class="lines">
+                    <h5>Leader Road</h5>
+                    <p>33 Places</p>
+                </div>
+                <div class="ic-lines">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+            </div>
+        </div>
+        <div class="cities">
+            <div class="civil">
+                <div class="lines">
+                    <h5>Naini</h5>
+                    <p>212 Places</p>
+                </div>
+                <div class="ic-lines">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+            </div>
+            <div class="civil">
+                <div class="lines">
+                    <h5>Lukerganj</h5>
+                    <p>17 Places</p>
+                </div>
+                <div class="ic-lines">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+            </div>
+            <div class="civil">
+                <div class="lines">
+                    <h5>See More</h5>
+                </div>
+                <div class="ic-lines">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="faq" onclick="closeEng()">
+        <h2>Explore Options near me</h2>
+        <ul class="accordion">
+            <li>
+                <input type="radio" name="accordion" id="first">
+                <label for="first" onclick="closeContent()">Popular cuisines near me</label>
+                <div class="content" id="content">
+                    <a href="#" >Bakery food near me </a>
+                    <a href="#">  Beverages food near me </a>
+                    <a href="#"> Biryani food near me </a>
+                    <a href="#"> Burger food near me </a>
+                    <a href="#"> Chinese food near me </a>
+                    <a href="#"> Coffee food near me </a>
+                    <a href="#"> Desserts food near me </a>
+                    <a href="#"> Ice Cream food near me </a>
+                    <a href="#"> Mithai food near me </a>
+                    <a href="#"> Momos food near me </a>
+                    <a href="#"> Mughlai food near me </a>
+                    <a href="#"> North Indian food near me </a>
+                    <a href="#"> Pizza food near me </a>
+                    <a href="#"> Rolls food near me </a>
+                    <a href="#"> Sandwich food near me </a>
+                    <a href="#"> Shake food near me </a>
+                    <a href="#"> Sichuan food near me </a>
+                    <a href="#"> South Indian food near me </a>
+                    <a href="#"> Street food near me </a>
+                    <a href="#"> Tea food near me </a>
+                </div>
+            </li>
+            <li>
+                <input type="radio" name="accordion" id="second">
+                <label for="second">Popular restaurant types near me</label>
+                <div class="content">
+                    <a href="#">Bakeries near me</a>
+                    <a href="#">Bars near me</a>
+                    <a href="#">Beverage Shops near me</a>
+                    <a href="#">Bhojanalya near me</a>
+                    <a href="#">Cafés near me</a>
+                    <a href="#">Casual Dining near me</a>
+                    <a href="#">Clubs near me</a>
+                    <a href="#">Dessert Parlors near me</a>
+                    <a href="#">Dhabas near me</a>
+                    <a href="#">Fine Dining near me</a>
+                    <a href="#">Food Trucks near me</a>
+                    <a href="#">Kiosks near me</a>
+                    <a href="#">Lounges near me</a>
+                    <a href="#">Quick Bites near me</a>
+                    <a href="#">Sweet Shops near me</a>
+                </div>
+            </li>
+            <li>
+                <input type="radio" name="accordion" id="third">
+                <label for="third">Cities We Deliver To</label>
+                <div class="content1">
+                    <a href="#">Delhi NCR</a>
+                    <a href="#">Kolkata</a>
+                    <a href="#">Mumbai</a>
+                    <a href="#">Bengaluru</a>
+                    <a href="#">Pune</a>
+                    <a href="#">Hyderabad</a>
+                    <a href="#">Chennai</a>
+                    <a href="#">Lucknow</a>
+                    <a href="#">Kochi</a>
+                    <a href="#">Jaipur</a>
+                    <a href="#">Ahemdabad</a>
+                    <a href="#">Chandigarh</a>
+                    <a href="#">Goa</a>
+                    <a href="#">Indore</a>
+                    <a href="#">Gangtok</a>
+                    <a href="#">Nasik</a>
+                    <a href="#">Ooty</a>
+                    <a href="#">Shimla</a>
+                    <a href="#">Ludihana</a>
+                    <a href="#">Guwhati</a>
+                    <a href="#">Amritsar</a>
+                    <a href="#">Kanpur</a>
+                    <a href="#">Allahabad</a>
+                    <a href="#">Aurangabad</a>
+                    <a href="#">Bhopal</a>
+                    <a href="#">Ranchi</a>
+                    <a href="#">Visakhapatnam</a>
+                    <a href="#">Bhubneshwar</a>
+                    <a href="#">Combaitore</a>
+                    <a href="#">Manglore</a>
+                    <a href="#">Vadora</a>
+                    <a href="#">Nagpur</a>
+                    <a href="#">Agra</a>
+                    <a href="#">Dehradun</a>
+                    <a href="#">Mysore</a>
+                    <a href="#">Puducherry</a>
+                    <a href="#">Surat</a>
+                    <a href="#">Varansi</a>
+                    <a href="#">Patna</a>
+                    <a href="#">Udaipur</a>
+                    <a href="#">Srinagar</a>
+                    <a href="#">Khajuraho</a>
+                    <a href="#">Neemrana</a>
+                    <a href="#">Cuttack</a>
+                    <a href="#">Trivandrum</a>
+                    <a href="#">Haridwar</a>
+                    <a href="#">Leh</a>
+                    <a href="#">Pushkar</a>
+                    <a href="#">Rajkot</a>
+                    <a href="#">Madurai</a>
+                    <a href="#">Kozhikode</a>
+                    <a href="#">Alappuzha</a>
+                    <a href="#">Thrissur</a>
+                    <a href="#">Manipal</a>
+                    <a href="#">Vijayavada</a>
+                    <a href="#">Jodhpur</a>
+                    <a href="#">Kota</a>
+                    <a href="#">Ajmer</a>
+                    <a href="#">Mussorie</a>
+                    <a href="#">Rishikesh</a>
+                    <a href="#">Jalandhar</a>
+                    <a href="#">Jammu</a>
+                    <a href="#">Manali</a>
+                    <a href="#">Dharamshala</a>
+                    <a href="#">See More</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <footer>
+        <div class="foot">
+            <div class="foot1">
+                <div class="foot-logo">
+                    <img src="https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png">
+                </div>
+                <div class="con-lan">
+                    <div class="coun">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Flag_of_India.png/1280px-Flag_of_India.png" onclick="openallcountry()"><p onclick="openallcountry()">India</p><i class="fa-solid fa-chevron-down" onclick="closeallcountry()"></i>
+                    </div>
+                    <div class="allcountry" id="allcountry">
+                        <div class="r1">
+                            <div class="rr">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Flag_of_India.png/1280px-Flag_of_India.png" alt="">
+                                India</div>
+                            <div class="r">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Flag_of_Chile.png" alt="">
+                                Chile</div>
+                            <div class="r">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Flag_of_Italy_%281946%E2%80%932003%29.png" alt="">
+                                Italy</div>
+                            <div class="r">
+                                <img src="https://w7.pngwing.com/pngs/444/759/png-transparent-ph-philippines-flag-icon.png" alt="">
+                                Phillipines</div>
+                            <div class="r">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Flag_of_Singapore.svg/2560px-Flag_of_Singapore.svg.png" alt="">
+                                Singapore</div>
+                            <div class="r">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Turkey_flag_300.png" alt="">
+                                Turkey</div>
+                        </div>
+                        <div class="r1">
+                            <div class="r">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b9/Flag_of_Australia.svg/1280px-Flag_of_Australia.svg.png" alt="">
+                                Australia</div>
+                            <div class="r">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_Czech_Republic.svg/2560px-Flag_of_the_Czech_Republic.svg.png" alt="">
+                                Czech Republic</div>
+                            <div class="r">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Flag_of_Lebanon.png" alt="">
+                                Lebanon</div>
+                            <div class="r">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/12/Flag_of_Poland.svg/2560px-Flag_of_Poland.svg.png" alt="">
+                                Poland</div>
+                            <div class="r">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Flag_of_Slovakia.png/800px-Flag_of_Slovakia.png?20051130111634" alt="">
+                                Slovakia</div>
+                            <div class="r">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Flag_of_the_United_Arab_Emirates_%283-2%29.svg/2560px-Flag_of_the_United_Arab_Emirates_%283-2%29.svg.png" alt="">
+                                UAE</div>
+                        </div>
+                        <div class="r1">
+                            <div class="r">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3CmNWJsmRwvWvw1U6jTePHQV49f0KQ-m0jiT8mSZ1&s" alt="">
+                                Brazil</div>
+                            <div class="r">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Indonesia_flag_300.png" alt="">
+                                Indonesia</div>
+                            <div class="r">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Flag_of_Malaysia.png/1200px-Flag_of_Malaysia.png" alt="">
+                                Malaysia</div>
+                            <div class="r">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrWt2CBzVIzHV8MixgaMwB8pDpSdBnHkZcq1e2jqD6&s" alt="">
+                                Protugal</div>
+                            <div class="r">
+                                <img src="https://img.freepik.com/free-vector/illustration-south-africa-flag_53876-27118.jpg" alt="">
+                                South Africa</div>
+                            <div class="r">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5y7o2gsRwGvdV7s0PMRa1p2JKUQoMu3pvbIRVcK1B&s" alt="">
+                                United Kingdom</div>
+                        </div>
+                        <div class="r1">
+                            <div class="r">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Flag_of_Canada.png/1200px-Flag_of_Canada.png" alt="">
+                                Canada</div>
+                            <div class="r">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7l1akYb9Zn83xi0yWUU0YphTLYNyQea9N5hol8zji&s" alt="">
+                                Ireland</div>
+                            <div class="r">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpqOUXGck3esZMqsoG8J5LzRue-vI5U1G1PKWEFtr3&s" alt="">
+                                New Zealand</div>
+                            <div class="r">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCmBjdHjB81HAWK4pl6VGQkDheVufd4-emezzFqeUp&s" alt="">
+                                Qatar</div>
+                            <div class="r">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlGYuwpOY3O0pXRNT9XaFfeKaAklVuxMc9Wg&usqp=CAU" alt="">
+                                Sri Lanka</div>
+                            <div class="r">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Flag_of_the_United_States.png/1200px-Flag_of_the_United_States.png" alt="">
+                                USA</div>
+                        </div>
+                        <span class="span1"></span>
+                    </div>
+                    <div class="langu">
+                        <i class="fa-solid fa-globe" id="A" onclick="openEng()"></i><p onclick="openEng()">English</p><i class="fa-solid fa-chevron-down" id="B" onclick="closeEng()"></i>
+                    </div>
+                    <div class="eng" id="eng">
+                        <div class="ipee">English</div>
+                        <div class="ipe">Türkçe</div>
+                        <div class="ipe">हिंदी</div>
+                        <div class="ipe">Português (BR)</div>
+                        <div class="ipe">Indonesian</div>
+                        <div class="ipe">Português (PT)</div>
+                        <div class="ipe">Español</div>
+                        <div class="ipe">Čeština</div>
+                        <div class="ipe">Slovenčina</div>
+                        <div class="ipe">Polish</div>
+                        <div class="ipe">Italian</div>
+                        <div class="ipe">Vietnamese</div>
+                        <span class="span"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="foot2" onclick="closeEng()">
+                <div class="z-foot" onclick="closeallcountry()">
+                    <h6>ABOUT ZOMATO</h6>
+                    <p>Who We Are</p>
+                    <p>Blog</p>
+                    <p>Work With Us</p>
+                    <p>Investor Relations</p>
+                    <p>Report Fraud</p>
+                    <p>Press Kit</p>
+                    <p>Contact Us</p>
+                </div>
+                <div class="z-foot" onclick="closeallcountry()">
+                    <h6>ZOMAVERSE</h6>
+                    <p>Zomato</p>
+                    <p>Blinkit</p>
+                    <p>Feeding India</p>
+                    <p>Hyperpure</p>
+                    <p>Zomaland</p>
+                </div>
+                <div class="z-foot1" onclick="closeallcountry()">
+                    <h6>FOR RESTAURANTS</h6>
+                    <p>Partner With Us</p>
+                    <p>Apps for You</p>
+                    <div class="z-z-foot1">
+                        <h6>FOR ENTERPRISES</h6>
+                        <p>Zomato For Enterprise</p>
+                    </div>
+                </div>
+                <div class="z-foot" onclick="closeallcountry()">
+                    <h6>LEARN MORE</h6>
+                    <p>Privacy</p>
+                    <p>Security</p>
+                    <p>Terms</p>
+                    <p>Sitemap</p>
+                </div>
+                <div class="z-foot" onclick="closeallcountry()">
+                    <h6>SOCIAL LINKS</h6>
+                    <div class="soc-logos">
+                        <i class="fa-brands fa-linkedin"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-youtube"></i>
+                        <i class="fa-brands fa-facebook"></i>
+                    </div>
+                    <div class="down-img" onclick="closeallcountry()">
+                        <div class="down-img1">
+                            <img src="https://b.zmtcdn.com/data/webuikit/9f0c85a5e33adb783fa0aef667075f9e1556003622.png" alt="">
+                        </div>
+                        <div class="down-img2">
+                            <img src="https://b.zmtcdn.com/data/webuikit/23e930757c3df49840c482a8638bf5c31556001144.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="foot3" onclick="closeallcountry()">
+                <p>By continuing past this page, you agree to our Terms of Service, Cookie Policy, Privacy Policy and Content Policies. All trademarks are properties of their respective owners. 2008-2023 © Zomato™ Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="Zomato.js"></script>
+</body>
+</html>
